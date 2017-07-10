@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ActivePublic</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <%= link_to 'Logical', root_path, class: 'navbar-brand' %>
+      </div>
+      <div id="navbar">
+        <ul class="nav navbar-nav">
+          <li><%= link_to 'Home', root_path %></li>
+        </ul>
+        <ul class="nav navbar-nav pull-right">
+          <% if current_user %>
+              <li><span><%= current_user.email %></span></li>
+              <li><%= link_to 'Sign Out', sign_out_path, method: :delete %></li>
+          <% else %>
+              <li><%= link_to 'Sign In', sign_in_path %></li>
+              <li><%= link_to 'Register', sign_up_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
