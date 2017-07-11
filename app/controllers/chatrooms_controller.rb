@@ -22,6 +22,7 @@ class ChatroomsController < ApplicationController
 
   def show
     @chatroom = Chatroom.find_by(publication_id: params[:slug])
+    puts "!!!!!!!!!!!!!#{@chatroom}"
     @message = Message.new
   end
 

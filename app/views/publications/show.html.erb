@@ -10,4 +10,15 @@
   <%= @publication.text %>
 </p>
 
+<div class="panel panel-default">
+  <% if @publication.chatroom.messages.any? %>
+    <div class="panel-body" id="messages">
+    <%= render partial: 'messages/message', collection: @publication.chatroom.messages%>
+    </div>
+  <%else%>
+      <div class="panel-body hidden" id="messages">
+      </div>
+  <%end%>
+</div>
 
+<%= render partial: './message_form', locals: {message: @message, chatroom: @chatroom}%>
