@@ -1,6 +1,7 @@
-<div class="page-header"><h1>Sign In</h1></div>
 
-<%= form_for @user_session do |f| %>
+<% unless current_user %>
+    <div class="page-header"><h1>Sign In</h1></div>
+    <%= form_for @user_session do |f| %>
     <%= render './errors', object: @user_session %>
 
     <div class="form-group">
@@ -19,4 +20,5 @@
     </div>
 
     <%= f.submit "Log in!", class: 'btn btn-primary btn-lg' %>
+  <% end %>
 <% end %>

@@ -15,6 +15,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(users_params)
+    @user.build_chat_user(nickname: @user.email)
     if @user.save
       flash[:success] = "Account registered!"
       redirect_to root_path

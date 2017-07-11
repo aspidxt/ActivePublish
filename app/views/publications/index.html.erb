@@ -17,8 +17,7 @@
       <tr>
         <td><%= publication.title %></td>
         <td><%= publication.text %></td>
-        <td><%= link_to 'Show', publication_path(publication) %></td>
-
+        <td><%= link_to 'Show', publication_path(publication.id) %></td>
 
       </tr>
   <% end %>

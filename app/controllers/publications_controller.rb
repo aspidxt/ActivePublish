@@ -2,8 +2,8 @@ class PublicationsController < ApplicationController
 
   private
 
-  def article_params
-    params.require(:publication).permit(:title, :text).merge(user_id: current_user.id)
+  def publication_params
+    params.require(:publication).permit(:title, :text).merge(user_id: current_user_session.user.id)
   end
 
 
@@ -15,10 +15,12 @@ class PublicationsController < ApplicationController
 
   def new
     @publication = Publication.new
+    ChatroomsController.new
   end
 
   def create
-    @publication = Publication.new(article_params)
+    @publication = Publication.new(publication_params)
+    @publication.build_chatroom
     if @publication.save
       redirect_to @publication
     else
