@@ -10,20 +10,10 @@ class ChatroomsController < ApplicationController
     @chatroom = Chatroom.new
   end
 
-  # def create
-  #   c_params = chatroom_params
-  #   if Chatroom.find_by(publication_id: c_params.fetch(:publication_id))
-  #     ChatroomsController.show
-  #   else
-  #     @chatroom = Chatroom.new(c_params)
-  #     @chatroom.save
-  #   end
-  # end
+  def create
+  end
 
   def show
-    @chatroom = Chatroom.find_by(publication_id: params[:slug])
-    puts "!!!!!!!!!!!!!#{@chatroom}"
-    @message = Message.new
   end
 
 end

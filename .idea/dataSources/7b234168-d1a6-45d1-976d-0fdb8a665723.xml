@@ -9,8 +9,8 @@
     </database>
     <schema id="3" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-07-11.17:56:05.706</IntrospectionTimestamp>
-      <IntrospectionStateNumber>677</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2017-07-14.16:44:22.680</IntrospectionTimestamp>
+      <IntrospectionStateNumber>719</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -65,7 +65,7 @@
     </table>
     <table id="15" parent="3" name="chat_users">
       <ObjectId>24620</ObjectId>
-      <StateNumber>677</StateNumber>
+      <StateNumber>719</StateNumber>
     </table>
     <table id="16" parent="3" name="chatrooms">
       <ObjectId>24606</ObjectId>
@@ -151,29 +151,34 @@
       <NotNull>1</NotNull>
       <StateNumber>676</StateNumber>
     </column>
-    <index id="32" parent="15" name="chat_users_pkey">
+    <column id="32" parent="15" name="session_ip">
+      <Position>6</Position>
+      <DataType>inet|0</DataType>
+      <StateNumber>719</StateNumber>
+    </column>
+    <index id="33" parent="15" name="chat_users_pkey">
       <ObjectId>24627</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="33" parent="15" name="index_chat_users_on_user_id">
+    <index id="34" parent="15" name="index_chat_users_on_user_id">
       <ObjectId>24634</ObjectId>
       <ColNames>user_id</ColNames>
     </index>
-    <key id="34" parent="15" name="chat_users_pkey">
+    <key id="35" parent="15" name="chat_users_pkey">
       <ObjectId>24628</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>chat_users_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="35" parent="15" name="fk_rails_3953ef352e">
+    <foreign-key id="36" parent="15" name="fk_rails_3953ef352e">
       <ObjectId>24629</ObjectId>
       <ColNames>user_id</ColNames>
       <RefTableName>users</RefTableName>
       <RefKeyName>users_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="36" parent="16" name="id">
+    <column id="37" parent="16" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
@@ -181,46 +186,46 @@
       <SequenceName>chatrooms_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;chatrooms_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="37" parent="16" name="publication_id">
+    <column id="38" parent="16" name="publication_id">
       <Position>2</Position>
       <DataType>bigint|0</DataType>
       <StateNumber>675</StateNumber>
     </column>
-    <column id="38" parent="16" name="created_at">
+    <column id="39" parent="16" name="created_at">
       <Position>3</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>675</StateNumber>
     </column>
-    <column id="39" parent="16" name="updated_at">
+    <column id="40" parent="16" name="updated_at">
       <Position>4</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>675</StateNumber>
     </column>
-    <index id="40" parent="16" name="chatrooms_pkey">
+    <index id="41" parent="16" name="chatrooms_pkey">
       <ObjectId>24610</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="41" parent="16" name="index_chatrooms_on_publication_id">
+    <index id="42" parent="16" name="index_chatrooms_on_publication_id">
       <ObjectId>24617</ObjectId>
       <ColNames>publication_id</ColNames>
     </index>
-    <key id="42" parent="16" name="chatrooms_pkey">
+    <key id="43" parent="16" name="chatrooms_pkey">
       <ObjectId>24611</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>chatrooms_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="43" parent="16" name="fk_rails_20340d64f4">
+    <foreign-key id="44" parent="16" name="fk_rails_20340d64f4">
       <ObjectId>24612</ObjectId>
       <ColNames>publication_id</ColNames>
       <RefTableName>publications</RefTableName>
       <RefKeyName>publications_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="44" parent="17" name="id">
+    <column id="45" parent="17" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
@@ -228,67 +233,67 @@
       <SequenceName>messages_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;messages_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="45" parent="17" name="content">
+    <column id="46" parent="17" name="content">
       <Position>2</Position>
       <DataType>varchar|0</DataType>
       <StateNumber>677</StateNumber>
     </column>
-    <column id="46" parent="17" name="chatroom_id">
+    <column id="47" parent="17" name="chatroom_id">
       <Position>3</Position>
       <DataType>bigint|0</DataType>
       <StateNumber>677</StateNumber>
     </column>
-    <column id="47" parent="17" name="chat_user_id">
+    <column id="48" parent="17" name="chat_user_id">
       <Position>4</Position>
       <DataType>bigint|0</DataType>
       <StateNumber>677</StateNumber>
     </column>
-    <column id="48" parent="17" name="created_at">
+    <column id="49" parent="17" name="created_at">
       <Position>5</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>677</StateNumber>
     </column>
-    <column id="49" parent="17" name="updated_at">
+    <column id="50" parent="17" name="updated_at">
       <Position>6</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>677</StateNumber>
     </column>
-    <index id="50" parent="17" name="messages_pkey">
+    <index id="51" parent="17" name="messages_pkey">
       <ObjectId>24644</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="51" parent="17" name="index_messages_on_chatroom_id">
+    <index id="52" parent="17" name="index_messages_on_chatroom_id">
       <ObjectId>24656</ObjectId>
       <ColNames>chatroom_id</ColNames>
     </index>
-    <index id="52" parent="17" name="index_messages_on_chat_user_id">
+    <index id="53" parent="17" name="index_messages_on_chat_user_id">
       <ObjectId>24657</ObjectId>
       <ColNames>chat_user_id</ColNames>
     </index>
-    <key id="53" parent="17" name="messages_pkey">
+    <key id="54" parent="17" name="messages_pkey">
       <ObjectId>24645</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>messages_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="54" parent="17" name="fk_rails_5d3b5a27f5">
+    <foreign-key id="55" parent="17" name="fk_rails_5d3b5a27f5">
       <ObjectId>24646</ObjectId>
       <ColNames>chatroom_id</ColNames>
       <RefTableName>chatrooms</RefTableName>
       <RefKeyName>chatrooms_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="55" parent="17" name="fk_rails_32c27c037e">
+    <foreign-key id="56" parent="17" name="fk_rails_32c27c037e">
       <ObjectId>24651</ObjectId>
       <ColNames>chat_user_id</ColNames>
       <RefTableName>chat_users</RefTableName>
       <RefKeyName>chat_users_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="56" parent="18" name="id">
+    <column id="57" parent="18" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
@@ -296,73 +301,73 @@
       <SequenceName>publications_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;publications_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="57" parent="18" name="title">
+    <column id="58" parent="18" name="title">
       <Position>2</Position>
       <DataType>varchar|0</DataType>
       <StateNumber>673</StateNumber>
     </column>
-    <column id="58" parent="18" name="text">
+    <column id="59" parent="18" name="text">
       <Position>3</Position>
       <DataType>text|0</DataType>
       <StateNumber>673</StateNumber>
     </column>
-    <column id="59" parent="18" name="user_id">
+    <column id="60" parent="18" name="user_id">
       <Position>4</Position>
       <DataType>bigint|0</DataType>
       <StateNumber>673</StateNumber>
     </column>
-    <column id="60" parent="18" name="created_at">
+    <column id="61" parent="18" name="created_at">
       <Position>5</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>673</StateNumber>
     </column>
-    <column id="61" parent="18" name="updated_at">
+    <column id="62" parent="18" name="updated_at">
       <Position>6</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>673</StateNumber>
     </column>
-    <index id="62" parent="18" name="publications_pkey">
+    <index id="63" parent="18" name="publications_pkey">
       <ObjectId>24596</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="63" parent="18" name="index_publications_on_user_id">
+    <index id="64" parent="18" name="index_publications_on_user_id">
       <ObjectId>24603</ObjectId>
       <ColNames>user_id</ColNames>
     </index>
-    <key id="64" parent="18" name="publications_pkey">
+    <key id="65" parent="18" name="publications_pkey">
       <ObjectId>24597</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>publications_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="65" parent="18" name="fk_rails_5b8fd83dce">
+    <foreign-key id="66" parent="18" name="fk_rails_5b8fd83dce">
       <ObjectId>24598</ObjectId>
       <ColNames>user_id</ColNames>
       <RefTableName>users</RefTableName>
       <RefKeyName>users_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="66" parent="19" name="version">
+    <column id="67" parent="19" name="version">
       <Position>1</Position>
       <DataType>varchar|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>667</StateNumber>
     </column>
-    <index id="67" parent="19" name="schema_migrations_pkey">
+    <index id="68" parent="19" name="schema_migrations_pkey">
       <ObjectId>16395</ObjectId>
       <ColNames>version</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="68" parent="19" name="schema_migrations_pkey">
+    <key id="69" parent="19" name="schema_migrations_pkey">
       <ObjectId>16396</ObjectId>
       <ColNames>version</ColNames>
       <UnderlyingIndexName>schema_migrations_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="69" parent="20" name="id">
+    <column id="70" parent="20" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
@@ -370,49 +375,49 @@
       <SequenceName>users_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="70" parent="20" name="email">
+    <column id="71" parent="20" name="email">
       <Position>2</Position>
       <DataType>varchar|0</DataType>
       <StateNumber>669</StateNumber>
     </column>
-    <column id="71" parent="20" name="crypted_password">
+    <column id="72" parent="20" name="crypted_password">
       <Position>3</Position>
       <DataType>varchar|0</DataType>
       <StateNumber>669</StateNumber>
     </column>
-    <column id="72" parent="20" name="password_salt">
+    <column id="73" parent="20" name="password_salt">
       <Position>4</Position>
       <DataType>varchar|0</DataType>
       <StateNumber>669</StateNumber>
     </column>
-    <column id="73" parent="20" name="persistence_token">
+    <column id="74" parent="20" name="persistence_token">
       <Position>5</Position>
       <DataType>varchar|0</DataType>
       <StateNumber>669</StateNumber>
     </column>
-    <column id="74" parent="20" name="created_at">
+    <column id="75" parent="20" name="created_at">
       <Position>6</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>669</StateNumber>
     </column>
-    <column id="75" parent="20" name="updated_at">
+    <column id="76" parent="20" name="updated_at">
       <Position>7</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>669</StateNumber>
     </column>
-    <index id="76" parent="20" name="users_pkey">
+    <index id="77" parent="20" name="users_pkey">
       <ObjectId>16414</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="77" parent="20" name="index_users_on_email">
+    <index id="78" parent="20" name="index_users_on_email">
       <ObjectId>16416</ObjectId>
       <ColNames>email</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="78" parent="20" name="users_pkey">
+    <key id="79" parent="20" name="users_pkey">
       <ObjectId>16415</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>users_pkey</UnderlyingIndexName>

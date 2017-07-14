@@ -1,14 +1,4 @@
 class PublicationsController < ApplicationController
-
-  private
-
-  def publication_params
-    params.require(:publication).permit(:title, :text).merge(user_id: current_user_session.user.id)
-  end
-
-
-  public
-
   def index
     @publications = Publication.all
   end
@@ -30,9 +20,13 @@ class PublicationsController < ApplicationController
 
   def show
     @publication = Publication.find(params[:id])
-    @chatroom = @publication.chatroom
     @message = Message.new
   end
 
 
+  private
+
+  def publication_params
+    params.require(:publication).permit(:title, :text).merge(user_id: current_user_session.user.id)
+  end
 end
