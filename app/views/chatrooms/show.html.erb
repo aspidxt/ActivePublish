@@ -1,5 +1,7 @@
 <div class="row col-md-8 col-md-offset-2">
-  <h1><%= @chatroom.created_at %></h1>
+  <li><stong>Personal message</stong></li>
+  <b><%= @chatroom.chatroom_members.first.chat_user.nickname %></b> and
+  <b><%= @chatroom.chatroom_members.second.chat_user.nickname %></b>
 
   <div class="panel panel-default">
   <% if @chatroom.messages.any? %>
@@ -12,4 +14,4 @@
   <%end%>
 </div>
 
-<%= render partial: './message_form', locals: {message: @message, chatroom: @chatroom}%>
+<%= render partial: './messages/message_form', locals: {message: @message, chatroom: @chatroom}%>

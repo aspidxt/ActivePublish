@@ -1,11 +1,11 @@
 class PublicationsController < ApplicationController
   def index
+    # TODO: pagination for publications list
     @publications = Publication.all
   end
 
   def new
     @publication = Publication.new
-    ChatroomsController.new
   end
 
   def create

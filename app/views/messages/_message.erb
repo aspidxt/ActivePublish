@@ -1,1 +1,5 @@
-<p><strong><%=message.chat_user.nickname%>:</strong> <%=message.content%></p>
+<p>
+  <strong>
+    <%=link_to message.chat_user.nickname, chatroom_path(slug: message.chat_user.id) %>:
+  </strong> <%=message.content%>
+</p>
